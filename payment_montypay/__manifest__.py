@@ -21,6 +21,7 @@ process online payments through the MontyPay platform.
         "views/payment_provider_views.xml",
         "views/payment_montypay_templates.xml",
     ],
+    "images": ["images/main_screenshot.png"],
     "installable": True,
     "application": False,
     "auto_install": False,

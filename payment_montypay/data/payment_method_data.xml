@@ -21,7 +21,7 @@
     <record id="payment_method_visa_montypay" model="payment.method">
         <field name="sequence">1001</field>
         <field name="name">Visa</field>
-        <field name="image" type="base64" file="payment_montypay/static/description/visa.png"/>
+        <field name="image" type="base64" file="payment_montypay/static/description/visa.svg"/>
         <field name="code">visa_montypay</field>
         <field name="primary_payment_method_id" eval="ref('payment_method_montypay')"/>
         <field name="active">True</field>
@@ -30,7 +30,7 @@
     <record id="payment_method_master_montypay" model="payment.method">
         <field name="sequence">1002</field>
         <field name="name">Mastercard</field>
-        <field name="image" type="base64" file="payment_montypay/static/description/master.png"/>
+        <field name="image" type="base64" file="payment_montypay/static/description/mastercard.svg"/>
         <field name="code">master_montypay</field>
         <field name="primary_payment_method_id" eval="ref('payment_method_montypay')"/>
         <field name="active">True</field>
@@ -39,7 +39,7 @@
     <record id="payment_method_amex_montypay" model="payment.method">
         <field name="sequence">1003</field>
         <field name="name">American Express</field>
-        <field name="image" type="base64" file="payment_montypay/static/description/amex.png"/>
+        <field name="image" type="base64" file="payment_montypay/static/description/american_express.svg"/>
         <field name="code">amex_montypay</field>
         <field name="primary_payment_method_id" eval="ref('payment_method_montypay')"/>
         <field name="active">True</field>
@@ -51,7 +51,7 @@
     <record id="payment_method_apple_pay_montypay" model="payment.method">
         <field name="sequence">1004</field>
         <field name="name">Apple Pay</field>
-        <field name="image" type="base64" file="payment_montypay/static/description/apple_pay.png"/>
+        <field name="image" type="base64" file="payment_montypay/static/description/apple.svg"/>
         <field name="code">apple_pay_montypay</field>
         <field name="primary_payment_method_id" eval="ref('payment_method_montypay')"/>
         <field name="active">True</field>
@@ -60,7 +60,7 @@
     <record id="payment_method_google_pay_montypay" model="payment.method">
         <field name="sequence">1005</field>
         <field name="name">Google Pay</field>
-        <field name="image" type="base64" file="payment_montypay/static/description/google_pay.png"/>
+        <field name="image" type="base64" file="payment_montypay/static/description/google.svg"/>
         <field name="code">google_pay_montypay</field>
         <field name="primary_payment_method_id" eval="ref('payment_method_montypay')"/>
         <field name="active">True</field>
