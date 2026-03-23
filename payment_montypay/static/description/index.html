@@ -1,152 +1,96 @@
 <section class="oe_container">
     <div class="oe_row oe_spaced">
-        <h2 class="oe_slogan" style="color:#1a3c6e;">MontyPay Payment Gateway for Odoo E-commerce &amp; POS</h2>
-        <h3 class="oe_slogan">Accept card payments (Visa, Mastercard, Amex), Apple Pay, and Google Pay through the MontyPay platform</h3>
+        <h2 class="oe_slogan" style="color:#1a3c6e;">MontyPay Payment Gateway for Odoo</h2>
+        <h3 class="oe_slogan">Accept secure online payments through MontyPay's hosted checkout — across eCommerce, invoices, and all Odoo payment flows.</h3>
     </div>
 </section>
 
 <section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#1a3c6e;">Features</h2>
+        <div class="oe_span12 text-justify oe_mt32">
+            <ul class="list-unstyled" style="font-size:17px;">
+                <li class="d-flex align-items-baseline mb-2">
+                    <i class="fa fa-check" style="color:#1a3c6e; padding-right:9px"></i>
+                    <span>Hosted, secure checkout page — no card data ever touches your server</span>
+                </li>
+                <li class="d-flex align-items-baseline mb-2">
+                    <i class="fa fa-check" style="color:#1a3c6e; padding-right:9px"></i>
+                    <span>Works across eCommerce, customer invoices, and all Odoo payment flows</span>
+                </li>
+                <li class="d-flex align-items-baseline mb-2">
+                    <i class="fa fa-check" style="color:#1a3c6e; padding-right:9px"></i>
+                    <span>Credit and debit card payments — Visa, Mastercard, American Express</span>
+                </li>
+                <li class="d-flex align-items-baseline mb-2">
+                    <i class="fa fa-check" style="color:#1a3c6e; padding-right:9px"></i>
+                    <span>Apple Pay and Google Pay support</span>
+                </li>
+                <li class="d-flex align-items-baseline mb-2">
+                    <i class="fa fa-check" style="color:#1a3c6e; padding-right:9px"></i>
+                    <span>Webhook-based payment confirmation (server-to-server callback)</span>
+                </li>
+                <li class="d-flex align-items-baseline mb-2">
+                    <i class="fa fa-check" style="color:#1a3c6e; padding-right:9px"></i>
+                    <span>Hash signature verification on all callbacks</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
     <div class="oe_row oe_spaced">
         <h2 class="oe_slogan" style="color:#1a3c6e;">Configuration</h2>
-        <div class="oe_span12 text-justify oe_mt32">
-            <ul class="list-unstyled" style="font-size:17px; border-radius:9px; padding-top:4px">
-                <li class="d-flex align-items-baseline mb-2">
-                    <i class="fa fa-circle" style="font-size:15px; color:#1a3c6e; padding-right:9px"></i>
-                    <span style="padding-bottom:3px">Navigate to the Website menu and click on Configuration.</span>
-                </li>
-                <li class="d-flex align-items-baseline mb-2">
-                    <i class="fa fa-circle" style="font-size:15px; color:#1a3c6e; padding-right:9px"></i>
-                    <span style="padding-bottom:3px">Click on Payment Providers and open the MontyPay Payment Gateway entry.</span>
-                </li>
-                <li class="d-flex align-items-baseline mb-2">
-                    <i class="fa fa-circle" style="font-size:15px; color:#1a3c6e; padding-right:9px"></i>
-                    <span style="padding-bottom:3px">Enter your MontyPay Merchant Key and Merchant Password.</span>
-                </li>
-            </ul>
-        </div>
-        <div class="oe_span12">
-            <img class="oe_picture oe_screenshot" src="7-Configure-Credentials.png">
+        <div class="oe_span12 text-justify oe_mt32" style="font-size:17px;">
+            <ol>
+                <li class="mb-2">Go to <strong>Accounting → Configuration → Payment Providers</strong> or <strong>Website → Configuration → Payment Providers</strong>.</li>
+                <li class="mb-2">Select <strong>MontyPay</strong> and enter your <strong>Merchant Key</strong> and <strong>Merchant Password</strong>.</li>
+                <li class="mb-2">Copy the <strong>Webhook URL</strong> shown in the credentials tab and send it to MontyPay support to configure your callback endpoint.</li>
+                <li class="mb-2">In the <strong>Configuration</strong> tab, enable the MontyPay payment method and select a Payment Journal.</li>
+            </ol>
         </div>
     </div>
 </section>
 
 <section class="oe_container oe_dark">
     <div class="oe_row oe_spaced">
-        <h2 class="oe_slogan" style="color:#1a3c6e;">Checkout</h2>
-        <div class="oe_span12 text-justify oe_mt32">
-            <ul class="list-unstyled" style="font-size:17px; border-radius:9px; padding-top:4px">
-                <li class="d-flex align-items-baseline mb-2">
-                    <i class="fa fa-circle" style="font-size:15px; color:#1a3c6e; padding-right:9px"></i>
-                    <span style="padding-bottom:3px">Select MontyPay at checkout and click Pay Now.</span>
-                </li>
-                <li class="d-flex align-items-baseline mb-2">
-                    <i class="fa fa-circle" style="font-size:15px; color:#1a3c6e; padding-right:9px"></i>
-                    <span style="padding-bottom:3px">You will be redirected to the secure MontyPay payment interface.</span>
-                </li>
+        <h2 class="oe_slogan" style="color:#1a3c6e;">External Services</h2>
+        <div class="oe_span12 text-justify oe_mt32" style="font-size:17px;">
+            <p>This module connects to MontyPay's hosted checkout service. When a customer initiates a payment, the following data is transmitted:</p>
+            <ul class="list-unstyled">
+                <li class="mb-1"><i class="fa fa-circle" style="font-size:10px; color:#1a3c6e; padding-right:9px"></i>Transaction amount and currency</li>
+                <li class="mb-1"><i class="fa fa-circle" style="font-size:10px; color:#1a3c6e; padding-right:9px"></i>Order reference ID</li>
+                <li class="mb-1"><i class="fa fa-circle" style="font-size:10px; color:#1a3c6e; padding-right:9px"></i>Customer name, email, and billing address</li>
+                <li class="mb-1"><i class="fa fa-circle" style="font-size:10px; color:#1a3c6e; padding-right:9px"></i>Callback URLs and session tokens</li>
             </ul>
-        </div>
-        <div class="oe_span12">
-            <img class="oe_picture oe_screenshot" src="9-Frontend-Checkout-Page-Choose-MontyPay.png">
+            <p class="mt-2">The customer is redirected to MontyPay's secure hosted page to enter payment details. No card data is ever stored on your server.</p>
+            <p><strong>API Endpoint:</strong> https://checkout.montypay.com</p>
+            <p>
+                <a href="https://montypay.com/terms-and-conditions">Terms and Conditions</a> &nbsp;|&nbsp;
+                <a href="https://montypay.com/privacy-policy">Privacy Policy</a>
+            </p>
         </div>
     </div>
 </section>
 
-<section class="oe_container oe_dark">
+<section class="oe_container">
     <div class="oe_row oe_spaced">
-        <h2 class="oe_slogan" style="color:#1a3c6e;">MontyPay Payment Interface</h2>
-        <div class="oe_span12 text-justify oe_mt32">
-            <ul class="list-unstyled" style="font-size:17px; border-radius:9px; padding-top:4px">
-                <li class="d-flex align-items-baseline mb-2">
-                    <i class="fa fa-circle" style="font-size:15px; color:#1a3c6e; padding-right:9px"></i>
-                    <span style="padding-bottom:3px">Choose a payment method and click Pay Now.</span>
-                </li>
-                <li class="d-flex align-items-baseline mb-2">
-                    <i class="fa fa-circle" style="font-size:15px; color:#1a3c6e; padding-right:9px"></i>
-                    <span style="padding-bottom:3px">On success, you are automatically redirected back to the store.</span>
-                </li>
-                <li class="d-flex align-items-baseline mb-2">
-                    <i class="fa fa-circle" style="font-size:15px; color:#1a3c6e; padding-right:9px"></i>
-                    <span style="padding-bottom:3px">Payment status is confirmed securely via webhook — even if the browser is closed.</span>
-                </li>
-            </ul>
-        </div>
-        <div class="oe_span12">
-            <img class="oe_picture oe_screenshot" src="gateway-page.png">
+        <h2 class="oe_slogan" style="color:#1a3c6e;">Frequently Asked Questions</h2>
+        <div class="oe_span12 oe_mt32" style="font-size:17px;">
+            <p><strong>How do I get my Merchant Key and Password?</strong><br/>
+            Contact the MontyPay sales team at <a href="https://www.montypay.com">montypay.com</a>.</p>
+
+            <p><strong>Does this module store card data?</strong><br/>
+            No. Customers enter payment details directly on MontyPay's hosted page. No card information is stored on your Odoo server.</p>
+
+            <p><strong>What payment methods are supported?</strong><br/>
+            Visa, Mastercard, American Express, Apple Pay, and Google Pay — all through MontyPay's secure hosted checkout.</p>
+
+            <p><strong>Where do I find the webhook URL?</strong><br/>
+            It is displayed in the MontyPay credentials tab inside Odoo. Copy it and provide it to MontyPay to receive payment confirmations.</p>
         </div>
     </div>
 </section>
 
-<section class="oe_container oe_dark">
-    <div class="oe_row oe_spaced">
-        <h2 class="oe_slogan" style="color:#1a3c6e;">Order Confirmation</h2>
-        <div class="oe_span12">
-            <img class="oe_picture oe_screenshot" src="10-Frontend-Payment-Confirmation.png">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container oe_dark">
-    <div class="oe_row oe_spaced">
-        <h2 class="oe_slogan" style="color:#1a3c6e;">Payment Transaction</h2>
-        <div class="oe_span12 text-justify oe_mt32">
-            <ul class="list-unstyled" style="font-size:17px; border-radius:9px; padding-top:4px">
-                <li class="d-flex align-items-baseline mb-2">
-                    <i class="fa fa-circle" style="font-size:15px; color:#1a3c6e; padding-right:9px"></i>
-                    <span style="padding-bottom:3px">Navigate to Website → Configuration → Payment Transactions.</span>
-                </li>
-                <li class="d-flex align-items-baseline mb-2">
-                    <i class="fa fa-circle" style="font-size:15px; color:#1a3c6e; padding-right:9px"></i>
-                    <span style="padding-bottom:3px">View and manage all MontyPay transactions from this screen.</span>
-                </li>
-            </ul>
-        </div>
-        <div class="oe_span12">
-            <img class="oe_picture oe_screenshot" src="13-Payment-Transaction-Details.png">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container oe_dark">
-    <div class="oe_row oe_spaced">
-        <h2 class="oe_slogan" style="color:#1a3c6e;">Refund</h2>
-        <div class="oe_span12 text-justify oe_mt32">
-            <ul class="list-unstyled" style="font-size:17px; border-radius:9px; padding-top:4px">
-                <li class="d-flex align-items-baseline mb-2">
-                    <i class="fa fa-circle" style="font-size:15px; color:#1a3c6e; padding-right:9px"></i>
-                    <span style="padding-bottom:3px">In the payment transaction, click the payment link (e.g. PBNK1/2024/00001).</span>
-                </li>
-                <li class="d-flex align-items-baseline mb-2">
-                    <i class="fa fa-circle" style="font-size:15px; color:#1a3c6e; padding-right:9px"></i>
-                    <span style="padding-bottom:3px">Click the Refund button and enter the amount to refund. Partial refunds are supported.</span>
-                </li>
-            </ul>
-        </div>
-        <div class="oe_span12">
-            <img class="oe_picture oe_screenshot" src="14-Refund-Option.png">
-        </div>
-        <div class="oe_span12">
-            <img class="oe_picture oe_screenshot" src="15-Refund-Form.png">
-        </div>
-    </div>
-</section>
-
-<section class="oe_container oe_dark">
-    <div class="oe_row oe_spaced">
-        <h2 class="oe_slogan" style="color:#1a3c6e;">Change Log</h2>
-        <div class="oe_span12 text-justify oe_mt32">
-            <ul class="list-unstyled" style="font-size:17px; border-radius:9px; padding-top:4px">
-                <li class="d-flex align-items-baseline mb-2">
-                    <i class="fa fa-circle" style="font-size:15px; color:#1a3c6e; padding-right:9px"></i>
-                    <span style="padding-bottom:3px">
-                        <span style="text-decoration:underline">19.0.1.0.0</span><br/>
-                        * March 2026<br/>
-                        * Initial release.
-                    </span>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container oe_separator">
-</section>
+<section class="oe_container oe_separator"></section>`
