@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+   <record id="payment_provider_form_montypay" model="ir.ui.view">
+    <field name="name">payment.provider.form.montypay</field>
+    <field name="model">payment.provider</field>
+    <field name="inherit_id" ref="payment.payment_provider_form"/>
+    <field name="arch" type="xml">
+
+        <group name="provider_credentials" position="inside">
+            <group invisible="code != 'montypay'">
+
+                <field name="montypay_merchant_key"
+                       string="Merchant Key"
+                       required="code == 'montypay' and state != 'disabled'"/>
+
+                <field name="montypay_merchant_password"
+                       string="Merchant Password"
+                       password="True"
+                       required="code == 'montypay' and state != 'disabled'"
+                       groups="base.group_system"/>
+
+                 <field name="montypay_webhook_url"
+                        string="Webhook URL"
+                        readonly="1"
+                        widget="CopyClipboardText"/>
+
+            </group>
+        </group>
+
+    </field>
+    </record>
+
+</odoo>
