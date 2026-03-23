@@ -1,99 +1,82 @@
-.. image:: images/logo.png
+.. image:: static/description/icon.png
 
 ===================================================
-MontyPay Payment Gateway for Odoo E-commerce
+MontyPay Payment Gateway for Odoo
 ===================================================
 
-MontyPay Payment Gateway for Odoo E-commerce is an open source module that integrates
-Odoo-based e-commerce websites with the MontyPay payment platform.
-Developed by the MontyPay Technical Team — https://www.montypay.com/
+This module integrates MontyPay with Odoo, allowing merchants to securely accept
+online payments through MontyPay's hosted checkout page — across eCommerce,
+invoices, and any other Odoo payment flow.
 
+No sensitive card details are stored on your server. MontyPay handles all payment
+data securely on their infrastructure.
 
-Installation & Upgrade
-======================
+Features
+========
 
-Download the latest module archive from https://github.com/montypay/odoo-extension/releases.
-
-Unzip the downloaded archive and copy the ``payment_montypay`` folder to your Odoo addons directory:
-
-* ``[ODOO_ROOT_FOLDER]/server/odoo/addons/``
-* ``/var/lib/odoo/addons/[VERSION]/`` (Linux only)
-* The ``addons_path`` defined in ``odoo.conf``
-
-Then choose one of these approaches:
-
-* In your Odoo administrator interface, browse to the **Configuration** tab and activate **Developer Mode**.
-* Or restart the Odoo server with ``sudo systemctl restart odoo`` on Linux (or restart the Windows Odoo service).
-  Odoo will update the application list on startup.
-* Then browse to the **Applications** tab and click **Update Applications List**.
-
-.. image:: images/1-App-Menu-Selection.png
-.. image:: images/2-Click-Update-App-List.png
-
-In your Odoo administrator interface, browse to the **Applications** tab, remove the "Applications"
-filter from the search field and search for ``montypay``. Click **Install** (or **Upgrade**) on the
-**MontyPay Payment Gateway Provider** module.
-
-.. image:: images/3-Locate-MontyPay-App-Click-Activate-Button-To-Install-App.png
+* Hosted, secure checkout page (no card data touches your server)
+* Works across eCommerce, customer invoices, and all Odoo payment flows
+* Credit and debit card payments (Visa, Mastercard, American Express)
+* Apple Pay and Google Pay support
+* Webhook-based payment confirmation (server-to-server callback)
+* Hash signature verification on all callbacks
 
 Configuration
 =============
 
-* Go to the **Website** menu.
+1. Go to **Accounting → Configuration → Payment Providers** or **Website → Configuration → Payment Providers**.
+2. Select **MontyPay** and enter your **Merchant Key** and **Merchant Password**.
+3. Copy the **Webhook URL** shown in the credentials tab and send it to MontyPay support to configure your callback endpoint.
+4. In the **Configuration** tab, enable the MontyPay payment method and select a Payment Journal.
 
-.. image:: images/4-Website-Menu-Selection.png
+External Services
+=================
 
-* Under **Configuration**, expand the **eCommerce** menu and click **Payment Providers**.
+This module connects to MontyPay's hosted checkout service to process payments.
+When a customer initiates a payment, the following data is transmitted to MontyPay:
 
-.. image:: images/5-Navigate-To-Payment-Providers.png
+* Transaction amount and currency
+* Order reference ID
+* Customer name, email, and billing address
+* Callback URLs and session tokens
 
-* Select the **MontyPay Payment Gateway** provider.
+The customer is then redirected to MontyPay's secure hosted page to enter their
+payment details. No card data is ever sent to or stored on your server.
 
-.. image:: images/6-Select-MontyPay-Payment-Gateway.png
+**API Endpoints used:**
 
-* Enter your MontyPay credentials (Merchant Key and Merchant Password).
+* https://checkout.montypay.com/api/v1/session
+* https://checkout.montypay.com/*
 
-.. image:: images/7-Configure-Credentials.png
+**Legal:**
 
-* In the **Configuration** tab, click **Enable Payment Methods** and activate MontyPay.
-* Optionally set a custom title and restrict supported countries and currencies.
+* Terms and Conditions: https://montypay.com/terms-and-conditions
+* Privacy Policy: https://montypay.com/privacy-policy
 
-.. image:: images/8-Configure-Optional-Title-And-Icons.png
+By using this module, you agree to the transmission of payment-related data to
+MontyPay in accordance with their terms and privacy policy.
 
-IMPORTANT
----------
-* You must select a **Payment Journal** in the **Configuration** tab of the MontyPay Payment Gateway
-  before the payment method becomes active.
+Frequently Asked Questions
+==========================
 
-Checkout
-========
+**How do I get my Merchant Key and Password?**
+Contact the MontyPay sales team at https://www.montypay.com.
 
-.. image:: images/9-Frontend-Checkout-Page-Choose-MontyPay.png
+**Does this module store card data?**
+No. Customers enter their payment details directly on MontyPay's hosted page.
+No card information is ever sent to or stored on your Odoo server.
 
-Payment Confirmation
---------------------
+**What payment methods are supported?**
+Visa, Mastercard, American Express, Apple Pay, and Google Pay — all through
+MontyPay's secure hosted checkout page.
 
-.. image:: images/10-Frontend-Payment-Confirmation.png
+**Where do I find the webhook URL?**
+It is displayed directly in the MontyPay credentials tab inside Odoo. Copy it and
+provide it to MontyPay so they can send payment confirmations to your server.
 
-Sales Order
-===========
-Navigate to **eCommerce Orders** → **Orders**.
-
-.. image:: images/11-Sales-Order.png
-
-Payment Transaction Details
-===========================
-Navigate to **Configuration** → **eCommerce** → **Payment Transactions**.
-
-.. image:: images/13-Payment-Transaction-Details.png
-
-Refunds
-=======
-* In the payment transaction, click the payment link (e.g. ``PBNK1/2023/00004``).
-* Click the **Refund** button and enter the amount to refund.
-
-.. image:: images/14-Refund-Option.png
-.. image:: images/15-Refund-Form.png
+**Where can I find MontyPay in Odoo?**
+MontyPay appears as a payment provider under both **Accounting → Configuration → Payment Providers**
+and **Website → Configuration → Payment Providers**.
 
 Change Log
 ==========
